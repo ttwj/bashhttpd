@@ -9,6 +9,22 @@ function get.Index() {
       fi
    done
 }
+function send.gzipFile() {
+   file="$1"
+   if [ "${file#*.}" = "sh" ]; then
+      cgi.Parse "$WWW_DIR/$1"
+      return 1
+   else
+      echo "HTTP/1.1 200 OK"
+      get.ContentType "$WWW_DIR/$1"
+      cat "$WWW_DIR/$1" > /tmp/data
+      zip /tmp/data.zip /tmp/data
+      echo "Content-Encoding: gzip"
+      echo ""
+      cat /tmp/data.zip
+   fi
+   exit 1
+}
 function get.ContentType() {
    FILE=$(ls $WWW_DIR | grep -w "${@}")
    FILETYPE=$(echo "$FILE" | sed -e 's/\./ \./' | awk '{print $2}')
