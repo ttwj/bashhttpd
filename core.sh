@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/usr/bin/env bash -x
 WWW_DIR=$HOME/www/
 INDEX_FILES="index.html index.htm"
 function get.Index() {
