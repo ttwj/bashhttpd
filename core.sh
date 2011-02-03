@@ -13,7 +13,7 @@ function get.ContentType() {
    FILE=$(ls $WWW_DIR | grep -w "${@}")
    FILETYPE=$(echo "$FILE" | sed -e 's/\./ \./' | awk '{print $2}')
    while read line; do
-      if [ "$(echo "$line" | grep -w "$FILETYPE")" ]; then
+      if [ "$(echo "$line" | sed -e 's/->/ /g' | grep -w "$FILETYPE")" ]; then
          ContentType=$(echo "$line" | awk '{print $2}')
       fi
    done < supported_filetypes
@@ -22,14 +22,14 @@ function get.ContentType() {
       ContentType="application/octet-stream"
    fi
    
-   echo "Content-Type: $ContentType"
+   echo -en "Content-Type: $ContentType\x0a\x0a"
 }
 function send.File() {
    file="$1"
    
    
    if [ "${file#*.}" = "sh" ]; then
-      bashcgi.Parse "$WWW_DIR/$1"
+      cgi.Parse "$WWW_DIR/$1"
       return 1
    else
       echo "HTTP/1.1 200 OK"
