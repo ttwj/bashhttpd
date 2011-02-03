@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #bashcgi for bashhttpd ^_^
 #© ttwj 2011
 function bashcgi.header.check() {
