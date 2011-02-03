@@ -1,4 +1,9 @@
-.html text/html
-.htm text/html
-.sh text/html
-.gif image/gif
+.html->text/html
+.htm->text/html
+.sh->text/html
+.gif->image/gif
+.css->text/css
+.txt->text/plain
+.js->application/x-javascript
+.php->application/x-httpd-php
+.bin->application/octet-stream
