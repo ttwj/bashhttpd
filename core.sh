@@ -19,8 +19,7 @@ function send.gzipFile() {
       get.ContentType "$WWW_DIR/$1"
       cat "$WWW_DIR/$1" > /tmp/data
       zip /tmp/data.zip /tmp/data
-      echo "Content-Encoding: gzip"
-      echo ""
+      echo -en "Content-Encoding: gzip\x0a\x0a"
       cat /tmp/data.zip
    fi
    exit 1
