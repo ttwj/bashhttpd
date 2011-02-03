@@ -1,12 +1,14 @@
-# bashhttpd:
-# an httpd written in bash
+### bashhttpd:
+### an httpd written in bash
 *(its a tad pointless >_<)*
 
+-----------------------
 ### Developers:
 #### miyoko
 #### ttwj
 #### Hexane
 
+-----------------------
 ## Roadmap
 * Support basic authentication (should be very simple --miyoko)
 * Support SSL (?) (not so easy, not sure if possible, but maybe --miyoko)
