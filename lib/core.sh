@@ -64,6 +64,7 @@ function send.Response(){
       200) err="OK";;
       403) err="Forbidden";;
       404) err="Not Found";;
+	  401) error="Authorization Required";;
       500) err="Internal Server Error";;
       501) err="Not Implemented";;
       *)   err="Internal Server Error"
