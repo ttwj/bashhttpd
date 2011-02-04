@@ -1,6 +1,5 @@
 #!/usr/bin/env bash -x
-WWW_DIR=$HOME/www/
-INDEX_FILES="index.html index.htm"
+source ../etc/bashhttpd.conf
 function get.Index() {
    for i in $INDEX_FILES; do
       if [ "$(ls $WWW_DIR/$i)" ]; then
@@ -31,7 +30,7 @@ function get.ContentType() {
       if [ "$(echo "$line" | sed -e 's/->/ /g' | grep -w "$FILETYPE")" ]; then
          ContentType=$(echo "$line" | awk '{print $2}')
       fi
-   done < supported_filetypes
+   done < ../etc/supported_filetypes
    
    if [ ! "$ContentType" ]; then
       ContentType="application/octet-stream"
