@@ -12,6 +12,7 @@
 
 -----------------------
 ## Roadmap
+* Support using inetd for tcp daemon. (EASY)
 * Support basic authentication (should be very simple --miyoko)
 * Support SSL (?) (not so easy, not sure if possible, but maybe --miyoko)
 * Support logging of users (ssooooooo easy... --miyoko)
