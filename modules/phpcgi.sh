@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # opens a phpcgi parser, explosions? i hope not.
 
 # THIS IS FOR CHECKING FOR SCRIPT IMPORT, BECAUSE THIS CAN CAUSE PAIN.

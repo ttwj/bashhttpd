@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 #bashcgi for bashhttpd ^_^
 #© ttwj 2011
 function bashcgi.header.check() {
@@ -7,6 +7,5 @@ function bashcgi.header.check() {
 }
 function bashcgi.header() {
 	#bashcgi.header <value> <data>
-	
+
 }
-	

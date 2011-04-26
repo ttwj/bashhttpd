@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-if [ ! -e "../etc/bashhttpd.conf" ]; then
+if [[ ! -e "../etc/bashhttpd.conf" ]]; then
 	echo "Couldn't find config file."
 	exit
 fi

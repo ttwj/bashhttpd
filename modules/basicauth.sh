@@ -1,2 +1,2 @@
-#!/us/bin/env bash
+#!/bin/bash
 #basic access authentication plugin for bashhttpd

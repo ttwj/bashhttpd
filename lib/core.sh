@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -x
+#!/bin/bash -x
 source ../etc/bashhttpd.conf
 function get.Index() {
    for i in $INDEX_FILES; do
@@ -31,17 +31,17 @@ function get.ContentType() {
          ContentType=$(echo "$line" | awk '{print $2}')
       fi
    done < ../etc/supported_filetypes
-   
+
    if [ ! "$ContentType" ]; then
       ContentType="application/octet-stream"
    fi
-   
+
    echo -en "Content-Type: $ContentType\x0a\x0a"
 }
 function send.File() {
    file="$1"
-   
-   
+
+
    if [ "${file#*.}" = "sh" ]; then
       cgi.Parse "$WWW_DIR/$1"
       return 1
@@ -86,7 +86,10 @@ function parse() {
          get.Index
          return 1
       fi
-      if [ ! -e "$WWW_DIR/$FILE" ]; then
+      if [ "$FILE"="favicon.ico" ];then
+         # thats fine, let it go.
+         echo "no favicon; let's let that slide."
+      elif [ ! -e "$WWW_DIR/$FILE" ]; then
          send.Response "404"
       else
          #get.ContentType "$FILE"
@@ -96,5 +99,5 @@ function parse() {
 }
 while read line; do
    parse "$line"
-   
+
 done

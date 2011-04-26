@@ -20,5 +20,5 @@ function control.basicAuth() {
   </HEAD>
   <BODY><H1>401 Unauthorized.</H1></BODY>
    </HTML>'
-	
+
 }
